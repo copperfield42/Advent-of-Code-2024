@@ -18,10 +18,10 @@ test_input = """
 """
 
 
-def guard_walk(start: Point, mapa: Matrix[str]) -> tuple[Matrix[str], bool]:
+def guard_walk(start: Point, mapa: Matrix[str]) -> bool:
     """
     mark in the Matrix mapa the position the guard walk into with a 'x'
-    and return said matrix along a boolean indicated if the walk is a loop or not
+    and return a boolean indicated if the walk is a loop or not
     """
     vector = DIRECCIONES["^"]
     position = start
@@ -30,12 +30,12 @@ def guard_walk(start: Point, mapa: Matrix[str]) -> tuple[Matrix[str], bool]:
     while True:
         mapa[position] = "x"
         if (position, vector) in seen:
-            return mapa, True
+            return True
         else:
             seen.add((position, vector))
         next_step = position + vector
         if not is_valid(next_step, mapa.shape):
-            return mapa, False
+            return False
         match mapa[next_step]:
             case "." | "x":
                 position = next_step

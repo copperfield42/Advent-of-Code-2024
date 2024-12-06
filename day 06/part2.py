@@ -8,16 +8,15 @@ import tqdm_recipes
 def main(data: str) -> int:
     """part 2 of the puzzle """
     initial, mapa = process_data(data)
-    walked_mapa, looped = guard_walk(initial, mapa)
+    looped = guard_walk(initial, mapa)
     assert not looped, "already is a loop"
-    candidates = set(where2(walked_mapa=="x"))
+    candidates = set(where2(mapa=="x"))
     candidates.discard(initial)
     result = 0
     for new_obstacle in tqdm_recipes.progress_bar(candidates):
-        walked_mapa[(walked_mapa == "x") | (walked_mapa == "O")] = "."
-        walked_mapa[new_obstacle] = "O"
-        walked_mapa, looped = guard_walk(initial, walked_mapa)
-        if looped:
+        mapa[(mapa == "O") | (mapa == "x")] = "."
+        mapa[new_obstacle] = "O"
+        if guard_walk(initial, mapa):
             result += 1
     return result
 

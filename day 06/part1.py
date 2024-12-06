@@ -7,8 +7,8 @@ from aoc_utils import test_input, get_raw_data, process_data, guard_walk
 def main(data: str) -> int:
     """part 1 of the puzzle """
     initial, mapa = process_data(data)
-    walked_mapa, _ = guard_walk(initial, mapa)
-    return (walked_mapa == "x").sum()
+    guard_walk(initial, mapa)
+    return (mapa == "x").sum()
 
 
 def test() -> bool:
