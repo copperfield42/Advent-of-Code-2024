@@ -4,7 +4,6 @@ from __future__ import annotations
 from typing import Iterator, Callable
 import itertools_recipes as ir
 import operator
-from math import prod
 
 test_input = """
 190: 10 19
@@ -50,12 +49,33 @@ def calculate(goal: int, nums: tuple[int, ...], operations: tuple[Callable[[int,
     return False
 
 
-def pre_calculation(goal, nums):
-    minimo = sum(nums)
-    maximo = prod(n for n in nums if n)
-    if goal in (minimo, maximo):
-        raise Success
-    if minimo <= goal <= maximo or 1 in nums:
+def is_reachable2(goal: int, numbers: tuple[int, ...], *, reverse_operations: tuple[Callable[[int, int], int | None], ...]) -> bool:
+    """reverse check, thanks to comments in r/adventofcode"""
+    if goal < 1 or not numbers:
+        return False
+    if len(numbers) == 1:
+        if goal == numbers[0]:
+            raise Success
+        else:
+            return False
+    n = numbers[-1]
+    ns = numbers[:-1]
+    for operation in reverse_operations:
+        if (new_goal := operation(goal, n)) is not None:
+            is_reachable2(new_goal, ns, reverse_operations=reverse_operations)
+    return False
+
+
+def is_possible_mul(goal: int, num: int) -> int | None:
+    new, mod = divmod(goal, num)
+    if not mod:
+        return new
+
+
+def calculate2(goal: int, numbers: tuple[int, ...]) -> bool:
+    try:
+        is_reachable2(goal, numbers, reverse_operations=(is_possible_mul, operator.sub))
+    except Success:
         return True
     return False
 
@@ -64,6 +84,7 @@ def process_data(data: str) -> Iterator[tuple[int, tuple[int, ...]]]:
     """transform the raw data into a processable form"""
     for line in ir.interesting_lines(data):
         test_value, *numbers = map(int, line.replace(":", "").split())
+        assert test_value > 0 and all(x > 0 for x in numbers)
         yield test_value, tuple(numbers)
     pass
 

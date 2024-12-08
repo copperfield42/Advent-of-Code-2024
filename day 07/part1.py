@@ -1,7 +1,7 @@
 # https://adventofcode.com/2024/day/7
 from __future__ import annotations
 
-from aoc_utils import test_input, get_raw_data, process_data, calculate
+from aoc_utils import test_input, get_raw_data, process_data, calculate2
 from math import prod
 
 
@@ -14,7 +14,7 @@ def main(data: str, verbose: bool = False) -> int:
         if verbose:
             print(f"{j:03}){n=:_}, {minimo=:_}, {maximo=:_}, {val=}")
         if minimo <= n <= maximo or 1 in val:
-            if n in (maximo, minimo) or calculate(n, val):
+            if n in (maximo, minimo) or calculate2(n, val):
                 if verbose:
                     print(f"{n=:_} is reachable")
                 result += n

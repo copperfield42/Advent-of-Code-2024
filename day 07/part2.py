@@ -1,7 +1,8 @@
 # https://adventofcode.com/2024/day/7
 from __future__ import annotations
 
-from aoc_utils import test_input, get_raw_data, process_data, calculate, operator
+from aoc_utils import test_input, get_raw_data, process_data
+from aoc_utils import operator, Success, is_possible_mul, is_reachable2
 from tqdm_recipes import progress_bar
 
 
@@ -9,11 +10,20 @@ def concat(a: int, b: int) -> int:
     return int(f"{a}{b}")
 
 
+def is_possible_concat(goal: int, num: int) -> int | None:
+    new, mod = divmod(goal, 10**len(f"{num}"))
+    if mod == num:
+        return new
+
+
 def main(data: str) -> int:
     """part 2 of the puzzle """
     result = 0
-    for j, (n, val) in enumerate(progress_bar(list(process_data(data))), 1):
-        if calculate(n, val, operations=(concat, operator.mul, operator.add)):
+    op = (is_possible_concat, is_possible_mul, operator.sub)
+    for n, val in process_data(data):
+        try:
+            is_reachable2(n, val, reverse_operations=op)
+        except Success:
             result += n
     return result
 
