@@ -24,6 +24,11 @@ class ChronospatialComputer:
     instruction: int = 0
     output: list[int] = dataclasses.field(default_factory=list)
 
+    def setup(self, a: int = 0, b: int = 0, c: int = 0) -> None:
+        self.register_a = a
+        self.register_b = b
+        self.register_c = c
+
     def combo_operand(self, value: int) -> int:
         match value:
             case 4:
@@ -38,7 +43,7 @@ class ChronospatialComputer:
                 return themselves
 
     def adv(self, operand: int) -> None:
-        self.register_a = self.register_a // (2**self.combo_operand(operand))
+        self.register_a = self.register_a >> self.combo_operand(operand)
         self.instruction += 2
 
     def bxl(self, operand: int) -> None:
