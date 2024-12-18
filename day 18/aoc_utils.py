@@ -4,10 +4,9 @@ from __future__ import annotations
 from typing import Iterator
 import itertools_recipes as ir
 from ast import literal_eval
-from aoc_recipes import Point
-from aoc_recipes.grid_recipes import Matrix, vecinos, is_valid
+from aoc_recipes import Point, vecinos, is_valid
 from aoc_recipes.graph_theory import a_star_shortest_path
-import numpy
+from dataclasses import dataclass
 
 
 test_input = """
@@ -39,9 +38,15 @@ test_input = """
 """
 
 
-def neighbors(mapa: Matrix[bool], position: Point) -> Iterator[Point]:
+@dataclass
+class MemoryMap:
+    shape: tuple[int, int]
+    corrupted: set[Point]
+
+
+def neighbors(mapa: MemoryMap, position: Point) -> Iterator[Point]:
     for new in vecinos(position):
-        if is_valid(new, mapa.shape) and not mapa[new]:
+        if is_valid(new, mapa.shape) and new not in mapa.corrupted:
             yield new
 
 

@@ -2,15 +2,13 @@
 from __future__ import annotations
 
 from aoc_utils import test_input, get_raw_data, process_data
-from aoc_utils import ir, Point, a_star_shortest_path, neighbors, numpy
+from aoc_utils import ir, Point, a_star_shortest_path, neighbors, MemoryMap
 
 
 def main(data: str, shape: tuple[int, int] = (71, 71), sample: int = 1024) -> int:
     """part 1 of the puzzle """
-    bytes_pos = list(ir.islice(process_data(data), sample))
-    memory_map = numpy.zeros(shape, dtype=bool)
-    for corrupted in bytes_pos:
-        memory_map[corrupted] = True
+    bytes_pos = set(ir.islice(process_data(data), sample))
+    memory_map = MemoryMap(shape, bytes_pos)
 
     cost, _ = a_star_shortest_path(memory_map, Point(0, 0), Point(*shape)-Point(1, 1), neighbors, build_path=None)
 

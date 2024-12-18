@@ -2,7 +2,7 @@
 from __future__ import annotations
 
 from aoc_utils import test_input, get_raw_data, process_data
-from aoc_utils import Point, a_star_shortest_path, neighbors, numpy
+from aoc_utils import Point, a_star_shortest_path, neighbors, MemoryMap
 from tqdm_recipes import progress_bar
 
 
@@ -11,16 +11,14 @@ def main(data: str, shape: tuple[int, int] = (71, 71), sample: int = 1024) -> st
     bytes_pos = list(process_data(data))
     first_sample = bytes_pos[:sample]
     pending = bytes_pos[sample:]
-    memory_map = numpy.zeros(shape, dtype=bool)
+    memory_map = MemoryMap(shape, set(first_sample))
     start = Point(0, 0)
     goal = Point(*shape) - Point(1, 1)
-    for corrupted in first_sample:
-        memory_map[corrupted] = True
 
     _, path = a_star_shortest_path(memory_map, start, goal, neighbors)
 
     for corrupted in progress_bar(pending):
-        memory_map[corrupted] = True
+        memory_map.corrupted.add(corrupted)
         if corrupted in path:
             _, path = a_star_shortest_path(memory_map, start, goal, neighbors)
         else:
