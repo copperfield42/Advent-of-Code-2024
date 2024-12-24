@@ -1,0 +1,267 @@
+
+x00 XOR y00 -> z00
+x00 AND y00 -> carry00
+
+x01 XOR y01 -> sum1_01
+x01 AND y01 -> tempcarry1_01
+carry00 XOR sum1_01 -> z01
+carry00 AND sum1_01 -> tempcarry2_01
+tempcarry1_01 OR tempcarry2_01 -> carry01
+
+x02 XOR y02 -> sum1_02
+x02 AND y02 -> tempcarry1_02
+carry01 XOR sum1_02 -> z02
+carry01 AND sum1_02 -> tempcarry2_02
+tempcarry1_02 OR tempcarry2_02 -> carry02
+
+x03 XOR y03 -> sum1_03
+x03 AND y03 -> tempcarry1_03
+carry02 XOR sum1_03 -> z03
+carry02 AND sum1_03 -> tempcarry2_03
+tempcarry1_03 OR tempcarry2_03 -> carry03
+
+x04 XOR y04 -> sum1_04
+x04 AND y04 -> tempcarry1_04
+carry03 XOR sum1_04 -> z04
+carry03 AND sum1_04 -> tempcarry2_04
+tempcarry1_04 OR tempcarry2_04 -> carry04
+
+x05 XOR y05 -> sum1_05
+x05 AND y05 -> tempcarry1_05
+carry04 XOR sum1_05 -> z05
+carry04 AND sum1_05 -> tempcarry2_05
+tempcarry1_05 OR tempcarry2_05 -> carry05
+
+x06 XOR y06 -> sum1_06
+x06 AND y06 -> tempcarry1_06
+carry05 XOR sum1_06 -> z06
+carry05 AND sum1_06 -> tempcarry2_06
+tempcarry1_06 OR tempcarry2_06 -> carry06
+
+x07 XOR y07 -> sum1_07
+x07 AND y07 -> tempcarry1_07
+carry06 XOR sum1_07 -> z07
+carry06 AND sum1_07 -> tempcarry2_07
+tempcarry1_07 OR tempcarry2_07 -> carry07
+
+x08 XOR y08 -> sum1_08
+x08 AND y08 -> tempcarry1_08
+carry07 XOR sum1_08 -> z08
+carry07 AND sum1_08 -> tempcarry2_08
+tempcarry1_08 OR tempcarry2_08 -> carry08
+
+x09 XOR y09 -> sum1_09
+x09 AND y09 -> tempcarry1_09
+carry08 XOR sum1_09 -> z09
+carry08 AND sum1_09 -> tempcarry2_09
+tempcarry1_09 OR tempcarry2_09 -> carry09
+
+x10 XOR y10 -> sum1_10
+x10 AND y10 -> tempcarry1_10
+carry09 XOR sum1_10 -> z10
+carry09 AND sum1_10 -> tempcarry2_10
+tempcarry1_10 OR tempcarry2_10 -> carry10
+
+x11 XOR y11 -> sum1_11
+x11 AND y11 -> tempcarry1_11
+carry10 XOR sum1_11 -> z11
+carry10 AND sum1_11 -> tempcarry2_11
+tempcarry1_11 OR tempcarry2_11 -> carry11
+
+x12 XOR y12 -> sum1_12
+x12 AND y12 -> tempcarry1_12
+carry11 XOR sum1_12 -> z12
+carry11 AND sum1_12 -> tempcarry2_12
+tempcarry1_12 OR tempcarry2_12 -> carry12
+
+x13 XOR y13 -> sum1_13
+x13 AND y13 -> tempcarry1_13
+carry12 XOR sum1_13 -> z13
+carry12 AND sum1_13 -> tempcarry2_13
+tempcarry1_13 OR tempcarry2_13 -> carry13
+
+x14 XOR y14 -> sum1_14
+x14 AND y14 -> tempcarry1_14
+carry13 XOR sum1_14 -> z14
+carry13 AND sum1_14 -> tempcarry2_14
+tempcarry1_14 OR tempcarry2_14 -> carry14
+
+x15 XOR y15 -> sum1_15
+x15 AND y15 -> tempcarry1_15
+carry14 XOR sum1_15 -> z15
+carry14 AND sum1_15 -> tempcarry2_15
+tempcarry1_15 OR tempcarry2_15 -> carry15
+
+x16 XOR y16 -> sum1_16
+x16 AND y16 -> tempcarry1_16
+carry15 XOR sum1_16 -> z16
+carry15 AND sum1_16 -> tempcarry2_16
+tempcarry1_16 OR tempcarry2_16 -> carry16
+
+x17 XOR y17 -> sum1_17
+x17 AND y17 -> tempcarry1_17
+carry16 XOR sum1_17 -> z17
+carry16 AND sum1_17 -> tempcarry2_17
+tempcarry1_17 OR tempcarry2_17 -> carry17
+
+x18 XOR y18 -> sum1_18
+x18 AND y18 -> tempcarry1_18
+carry17 XOR sum1_18 -> z18
+carry17 AND sum1_18 -> tempcarry2_18
+tempcarry1_18 OR tempcarry2_18 -> carry18
+
+x19 XOR y19 -> sum1_19
+x19 AND y19 -> tempcarry1_19
+carry18 XOR sum1_19 -> z19
+carry18 AND sum1_19 -> tempcarry2_19
+tempcarry1_19 OR tempcarry2_19 -> carry19
+
+x20 XOR y20 -> sum1_20
+x20 AND y20 -> tempcarry1_20
+carry19 XOR sum1_20 -> z20
+carry19 AND sum1_20 -> tempcarry2_20
+tempcarry1_20 OR tempcarry2_20 -> carry20
+
+x21 XOR y21 -> sum1_21
+x21 AND y21 -> tempcarry1_21
+carry20 XOR sum1_21 -> z21
+carry20 AND sum1_21 -> tempcarry2_21
+tempcarry1_21 OR tempcarry2_21 -> carry21
+
+x22 XOR y22 -> sum1_22
+x22 AND y22 -> tempcarry1_22
+carry21 XOR sum1_22 -> z22
+carry21 AND sum1_22 -> tempcarry2_22
+tempcarry1_22 OR tempcarry2_22 -> carry22
+
+x23 XOR y23 -> sum1_23
+x23 AND y23 -> tempcarry1_23
+carry22 XOR sum1_23 -> z23
+carry22 AND sum1_23 -> tempcarry2_23
+tempcarry1_23 OR tempcarry2_23 -> carry23
+
+x24 XOR y24 -> sum1_24
+x24 AND y24 -> tempcarry1_24
+carry23 XOR sum1_24 -> z24
+carry23 AND sum1_24 -> tempcarry2_24
+tempcarry1_24 OR tempcarry2_24 -> carry24
+
+x25 XOR y25 -> sum1_25
+x25 AND y25 -> tempcarry1_25
+carry24 XOR sum1_25 -> z25
+carry24 AND sum1_25 -> tempcarry2_25
+tempcarry1_25 OR tempcarry2_25 -> carry25
+
+x26 XOR y26 -> sum1_26
+x26 AND y26 -> tempcarry1_26
+carry25 XOR sum1_26 -> z26
+carry25 AND sum1_26 -> tempcarry2_26
+tempcarry1_26 OR tempcarry2_26 -> carry26
+
+x27 XOR y27 -> sum1_27
+x27 AND y27 -> tempcarry1_27
+carry26 XOR sum1_27 -> z27
+carry26 AND sum1_27 -> tempcarry2_27
+tempcarry1_27 OR tempcarry2_27 -> carry27
+
+x28 XOR y28 -> sum1_28
+x28 AND y28 -> tempcarry1_28
+carry27 XOR sum1_28 -> z28
+carry27 AND sum1_28 -> tempcarry2_28
+tempcarry1_28 OR tempcarry2_28 -> carry28
+
+x29 XOR y29 -> sum1_29
+x29 AND y29 -> tempcarry1_29
+carry28 XOR sum1_29 -> z29
+carry28 AND sum1_29 -> tempcarry2_29
+tempcarry1_29 OR tempcarry2_29 -> carry29
+
+x30 XOR y30 -> sum1_30
+x30 AND y30 -> tempcarry1_30
+carry29 XOR sum1_30 -> z30
+carry29 AND sum1_30 -> tempcarry2_30
+tempcarry1_30 OR tempcarry2_30 -> carry30
+
+x31 XOR y31 -> sum1_31
+x31 AND y31 -> tempcarry1_31
+carry30 XOR sum1_31 -> z31
+carry30 AND sum1_31 -> tempcarry2_31
+tempcarry1_31 OR tempcarry2_31 -> carry31
+
+x32 XOR y32 -> sum1_32
+x32 AND y32 -> tempcarry1_32
+carry31 XOR sum1_32 -> z32
+carry31 AND sum1_32 -> tempcarry2_32
+tempcarry1_32 OR tempcarry2_32 -> carry32
+
+x33 XOR y33 -> sum1_33
+x33 AND y33 -> tempcarry1_33
+carry32 XOR sum1_33 -> z33
+carry32 AND sum1_33 -> tempcarry2_33
+tempcarry1_33 OR tempcarry2_33 -> carry33
+
+x34 XOR y34 -> sum1_34
+x34 AND y34 -> tempcarry1_34
+carry33 XOR sum1_34 -> z34
+carry33 AND sum1_34 -> tempcarry2_34
+tempcarry1_34 OR tempcarry2_34 -> carry34
+
+x35 XOR y35 -> sum1_35
+x35 AND y35 -> tempcarry1_35
+carry34 XOR sum1_35 -> z35
+carry34 AND sum1_35 -> tempcarry2_35
+tempcarry1_35 OR tempcarry2_35 -> carry35
+
+x36 XOR y36 -> sum1_36
+x36 AND y36 -> tempcarry1_36
+carry35 XOR sum1_36 -> z36
+carry35 AND sum1_36 -> tempcarry2_36
+tempcarry1_36 OR tempcarry2_36 -> carry36
+
+x37 XOR y37 -> sum1_37
+x37 AND y37 -> tempcarry1_37
+carry36 XOR sum1_37 -> z37
+carry36 AND sum1_37 -> tempcarry2_37
+tempcarry1_37 OR tempcarry2_37 -> carry37
+
+x38 XOR y38 -> sum1_38
+x38 AND y38 -> tempcarry1_38
+carry37 XOR sum1_38 -> z38
+carry37 AND sum1_38 -> tempcarry2_38
+tempcarry1_38 OR tempcarry2_38 -> carry38
+
+x39 XOR y39 -> sum1_39
+x39 AND y39 -> tempcarry1_39
+carry38 XOR sum1_39 -> z39
+carry38 AND sum1_39 -> tempcarry2_39
+tempcarry1_39 OR tempcarry2_39 -> carry39
+
+x40 XOR y40 -> sum1_40
+x40 AND y40 -> tempcarry1_40
+carry39 XOR sum1_40 -> z40
+carry39 AND sum1_40 -> tempcarry2_40
+tempcarry1_40 OR tempcarry2_40 -> carry40
+
+x41 XOR y41 -> sum1_41
+x41 AND y41 -> tempcarry1_41
+carry40 XOR sum1_41 -> z41
+carry40 AND sum1_41 -> tempcarry2_41
+tempcarry1_41 OR tempcarry2_41 -> carry41
+
+x42 XOR y42 -> sum1_42
+x42 AND y42 -> tempcarry1_42
+carry41 XOR sum1_42 -> z42
+carry41 AND sum1_42 -> tempcarry2_42
+tempcarry1_42 OR tempcarry2_42 -> carry42
+
+x43 XOR y43 -> sum1_43
+x43 AND y43 -> tempcarry1_43
+carry42 XOR sum1_43 -> z43
+carry42 AND sum1_43 -> tempcarry2_43
+tempcarry1_43 OR tempcarry2_43 -> carry43
+
+x44 XOR y44 -> sum1_44
+x44 AND y44 -> tempcarry1_44
+carry43 XOR sum1_44 -> z44
+carry43 AND sum1_44 -> tempcarry2_44
+tempcarry1_44 OR tempcarry2_44 -> z45
